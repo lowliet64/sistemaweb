@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name = "viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<script src="jquery-1.9.0.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+
+	
+</head>
+<body style=" background: #993399  ">
+    <script src="code/highcharts.js"></script>
+    <script src="code/modules/exporting.js"></script>
+    <div style= "width: 1345px; height: 200px; margin: 0 auto;  background:#660066  " > 
+        <img src="logo.png" style="position: relative; left: 70px">
+
+    </div>
+    
+
+
+<div class="container " class="collapse in" style ="padding-top: 0.5cm; background: #660066  ">
+	
+	<div class="panel-group" id="principal" > 
+	<div class="panel panel-default">
+		<div class="panel-heading"> 
+			<h2 class="panel-title" data-toggle="collapse" data-parent="#principal" data-target="#pressure1"> Pressão</h2>
+		</div> 
+		<div class="collapse in" id="pressure1">
+			<div class="panel-bory"> <div id="pressure" style="min-width: 310px; height: 400px; margin: 0 auto" > </div></div>
+		</div>	
+	</div>
+
+		
+	<div class="panel panel-default" >
+		<div class="panel-heading"> <h2 class="panel-title" data-toggle="collapse" data-parent="#principal" data-target="#temperature1">Temperatura</h2></div> 
+		<div class="collapse in" id="temperature1" >
+			<div class="panel-bory"> 
+			<div id="temperature" style="min-width: 310px; height: 400px; margin: 0 auto" > </div>
+		</div> 	
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading"><h2 class="panel-title" data-toggle="collapse" data-parent="#principal" data-target="#rua1"> Umidade Relativa do Ar</h2></div>
+		<div class="collapse in" id="rua1">
+			<div class="panel-bory"> <div id="rua" style="min-width: 310px; height: 400px; margin: 0 auto" ></div></div>	
+		</div>
+
+	</div>
+
+
+	<div class="panel panel-default">
+		<div class="panel-heading"> 
+			<h2 class="panel-title" data-toggle="collapse" data-parent="#principal" data-target="#anemometer1">Velocidade do Vento</h2>
+		</div>
+			<div class="collapse in" id="anemometer1">
+				<div class="panel-bory"> <div id="anemometer" style="min-width: 310px; height: 400px; margin: 0 auto" ></div> </div>		
+			</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading"><h2 class="panel-title" data-toggle="collapse" data-parent="#principal" data-target="#windv1">Direção do Vento</h2></div>	
+		<div class="collapse in" id="windv1">
+			<div class="panel-bory"> <div id="windv" style="min-width: 310px; height: 400px; margin: 0 auto" ></div> </div>	
+		</div>
+
+	</div>	
+	
+</div>
+</div>
+<!--- <footer style=" position: absolute; 
+    bottom: 0px; 
+    width: 110%; 
+    height: 80px; 
+    background-color: #33CC00 
+ "> </footer>--> 
+<script type="text/javascript" >
+
+Highcharts.chart('pressure', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Média da Pressão Atmosférica a cada 10 minutos'
+    },
+    
+    yAxis: {
+        title: {
+            text: 'Pressure (hPa)'
+        }
+    },
+    xAxis: {
+        labels: {
+            format: '{value} min'
+        },
+        categories: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100', '110', '120'],
+        title: {
+            text: 'Tempo'
+        }
+    },
+	plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+	
+    series: [{
+        name: 'Pressão',
+        data: [1023,1015,1028,1021,1020]
+    }]
+});
+        </script>	
+
+<script type="text/javascript">
+		Highcharts.chart('temperature', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Média da Temperatura a cada 10 minutos'
+    },
+    
+    yAxis: {
+        title: {
+            text: 'Temperature (°C)'
+        }
+    },
+    xAxis: {
+        labels: {
+            format: '{value} min'
+        },
+        categories: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100', '110', '120'],
+        title: {
+            text: 'Time'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    
+    series: [{
+        name: 'Temperatura',
+        data: [26,27,29,30,32]
+    }]
+});
+		
+	</script>
+	<script type="text/javascript">
+
+Highcharts.chart('rua', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Média da Umidade Relativa do Ar a cada 10 minutos'
+    },
+    
+    yAxis: {
+        title: {
+            text: 'Relative Humidity (%rel)'
+        }
+    },
+    xAxis: {
+        labels: {
+            format: '{value} min'
+        },
+        categories: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100', '110', '120'],
+        title: {
+            text: 'Time'
+        }
+    },
+	plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+	
+    series: [{
+        name: 'Umidade Relativa do Ar',
+        data: [95,94,80,99]
+    }]
+});
+		</script>
+		<script type="text/javascript">
+
+Highcharts.chart('anemometer', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Média do Anemômetro a cada 10 minutos'
+    },
+    
+    yAxis: {
+        title: {
+            text: 'Anemometer (m/s)'
+        }
+    },
+    xAxis: {
+        labels: {
+            format: '{value} min'
+        },
+        categories: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100', '110', '120'],
+        title: {
+            text: 'Time'
+        }
+    },
+	plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+	
+    series: [{
+        name: 'Anemômetro',
+        data: [0,12,16,10,21]
+    }]
+});
+</script>
+<script type="text/javascript">
+
+Highcharts.chart('windv', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Média da Direção do Vento a cada 10 minutos'
+    },
+    
+    yAxis: {
+        title: {
+            text: 'Wind-Vane (°)'
+        }
+    },
+    xAxis: {
+        labels: {
+            format: '{value} min'
+        },
+        categories: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100', '110', '120'],
+        title: {
+            text: 'Time'
+        }
+    },
+	plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+	
+    series: [{
+        name: 'Direção do Vento',
+        data: [104,106,22.5,333.5,0]
+    }]
+});
+		</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body>
+<script src="code/highcharts.js"></script>
+<script src="code/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+
+		<script type="text/javascript">
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Média do Anemômetro a cada 10 minutos'
+    },
+    
+    yAxis: {
+        title: {
+            text: 'Anemometer (m/s)'
+        }
+    },
+    xAxis: {
+        labels: {
+            format: '{value} min'
+        },
+        categories: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100', '110', '120'],
+        title: {
+            text: 'Time'
+        }
+    },
+	plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+	
+    series: [{
+        name: 'Anemômetro',
+        data: [0,12,16,10,21]
+    }]
+});
+		</script>
+	</body>
+</html>
